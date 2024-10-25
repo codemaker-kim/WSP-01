@@ -1,4 +1,4 @@
-package org.project.smu_vote;
+package org.project.smuvote;
 
 import java.io.*;
 import javax.servlet.http.*;
