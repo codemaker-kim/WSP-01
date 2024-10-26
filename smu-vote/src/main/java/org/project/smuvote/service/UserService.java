@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Cleanup;
 import lombok.NoArgsConstructor;
 import org.project.smuvote.DTO.AddUserRequest;
+import org.project.smuvote.domain.User;
 import org.project.smuvote.util.ConnectionUtil;
 
 import java.sql.Connection;
@@ -37,5 +38,21 @@ public class UserService {
         preparedStatement.setString(2, dto.getPassword());
 
         preparedStatement.executeUpdate();
+    }
+
+    public User findUserByInfo (AddUserRequest dto) throws Exception {
+        String sql = "select * from users where username = ? and password = ?";
+
+        @Cleanup Connection connection = connectionUtil.getConnection();
+        @Cleanup PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        preparedStatement.setString(1, dto.getUsername());
+        preparedStatement.setString(2, dto.getPassword());
+
+        @Cleanup ResultSet rs = preparedStatement.executeQuery();
+
+        rs.next();
+
+        return (User) rs.getObject(1);
     }
 }
