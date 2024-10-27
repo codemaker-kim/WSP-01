@@ -36,6 +36,7 @@ public class LoginController extends HttpServlet {
 
         try{
             userService.findUserByInfo(dto);
+            sessionUtil.setSession(request);
             response.sendRedirect("/main");
         } catch(NullPointerException e){
             response.sendRedirect("/loginError");
