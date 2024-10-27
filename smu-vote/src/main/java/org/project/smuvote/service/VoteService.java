@@ -2,6 +2,7 @@ package org.project.smuvote.service;
 
 import lombok.AllArgsConstructor;
 import lombok.Cleanup;
+import lombok.NoArgsConstructor;
 import org.project.smuvote.DTO.AddVoteRequest;
 import org.project.smuvote.util.ConnectionUtil;
 
@@ -9,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 @AllArgsConstructor
+@NoArgsConstructor
 public class VoteService {
     private ConnectionUtil connectionUtil;
 

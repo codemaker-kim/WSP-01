@@ -1,5 +1,7 @@
 package org.project.smuvote.controller;
 
+import org.project.smuvote.DTO.AddVoteRequest;
+import org.project.smuvote.service.UserService;
 import org.project.smuvote.service.VoteService;
 import org.project.smuvote.util.SessionUtil;
 
@@ -14,7 +16,9 @@ import java.io.IOException;
 public class VoteController extends HttpServlet {
 
     SessionUtil sessionUtil = new SessionUtil();
-    VoteService voteService;
+    VoteService voteService = new VoteService();
+    UserService userService = new UserService();
+
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,8 +32,16 @@ public class VoteController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       String title = request.getParameter("voteTitle");
-
+       try{
+           String title = request.getParameter("voteTitle");
+           Long creatorId = userService.getUserIdBySession(request);
+           voteService.save(AddVoteRequest.builder()
+                   .creatorId(creatorId)
+                   .title(title)
+                   .build());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
     }
 
 }

@@ -16,7 +16,7 @@ public class MainController extends HttpServlet {
     SessionUtil sessionUtil = new SessionUtil();
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession(false);
+        HttpSession session = sessionUtil.getSession(request);
 
         if(session.getAttribute("username") == null)
             request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
