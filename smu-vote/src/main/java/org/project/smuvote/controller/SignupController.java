@@ -1,6 +1,7 @@
 package org.project.smuvote.controller;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.project.smuvote.DTO.AddUserRequest;
 import org.project.smuvote.service.UserService;
 
@@ -12,10 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @WebServlet(name = "signupController", value = "/signup")
 public class SignupController extends HttpServlet {
 
-    private final UserService userService;
+    private UserService userService;
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

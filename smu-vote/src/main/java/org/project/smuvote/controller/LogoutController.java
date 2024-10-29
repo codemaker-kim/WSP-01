@@ -1,6 +1,7 @@
 package org.project.smuvote.controller;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.project.smuvote.util.SessionUtil;
 
 import javax.servlet.ServletException;
@@ -11,10 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @WebServlet(name = "logoutController", value="/logout")
 public class LogoutController extends HttpServlet {
 
-    private final SessionUtil sessionUtil;
+    private SessionUtil sessionUtil = new SessionUtil();
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

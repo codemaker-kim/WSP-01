@@ -1,6 +1,7 @@
 package org.project.smuvote.controller;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.project.smuvote.DTO.AddUserRequest;
 import org.project.smuvote.service.UserService;
 import org.project.smuvote.util.SessionUtil;
@@ -12,11 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@NoArgsConstructor
 @AllArgsConstructor
 @WebServlet(name = "loginController", value = "/login")
 public class LoginController extends HttpServlet {
 
-    private final SessionUtil sessionUtil;
+    private SessionUtil sessionUtil;
     private UserService userService;
 
     @Override

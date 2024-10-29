@@ -1,5 +1,6 @@
 package org.project.smuvote.controller;
 
+import lombok.NoArgsConstructor;
 import org.project.smuvote.util.SessionUtil;
 
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "mainController", value = "/main")
+@NoArgsConstructor
 public class MainController extends HttpServlet {
 
     SessionUtil sessionUtil = new SessionUtil();

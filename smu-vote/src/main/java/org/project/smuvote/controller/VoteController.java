@@ -1,5 +1,6 @@
 package org.project.smuvote.controller;
 
+import lombok.NoArgsConstructor;
 import org.project.smuvote.DTO.AddVoteRequest;
 import org.project.smuvote.service.UserService;
 import org.project.smuvote.service.VoteService;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name="voteController", value="/vote")
+@NoArgsConstructor
 public class VoteController extends HttpServlet {
 
     SessionUtil sessionUtil = new SessionUtil();
