@@ -37,7 +37,7 @@ public class UserService {
     }
 
     public void save(AddUserRequest dto) throws Exception {
-        String sql = "insert into users (username, password), values (?, ?)";
+        String sql = "insert into users (username, password) values (?, ?)";
         @Cleanup Connection connection = connectionUtil.getConnection();
         @Cleanup PreparedStatement preparedStatement = connection.prepareStatement(sql);
 

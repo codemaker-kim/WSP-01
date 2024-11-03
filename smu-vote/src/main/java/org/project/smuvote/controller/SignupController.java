@@ -39,7 +39,9 @@ public class SignupController extends HttpServlet {
                                     .build();
                 userService.save(dto);
             }
-        } catch (Exception e) {
+        } catch (NullPointerException e) {
+            response.sendRedirect("/signupError");
+        } catch (Exception e){
             e.printStackTrace();
         }
 
