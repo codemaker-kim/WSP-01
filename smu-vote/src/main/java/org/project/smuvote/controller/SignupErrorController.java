@@ -11,8 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @AllArgsConstructor
-@NoArgsConstructor
-@WebServlet(name = "loginErrorController", value = "/signupError")
+@WebServlet(name = "signupErrorController", value = "/signupError")
 public class SignupErrorController extends HttpServlet {
 
     @Override

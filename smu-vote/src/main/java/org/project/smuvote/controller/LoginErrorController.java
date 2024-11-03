@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @WebServlet(name = "loginErrorController", value = "/loginError")
 public class LoginErrorController extends HttpServlet {
 
