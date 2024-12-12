@@ -1,2 +1,2 @@
 # WSP-01
-24 WSP Mid-term
+24-2nd WSP 
