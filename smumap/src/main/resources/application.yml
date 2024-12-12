@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: update
+        driver_class:
+    show-sql: true
+    defer-datasource-initialization: true
+  datasource:
+    url:
+    driver-class-name:
+    username:
+    password:
