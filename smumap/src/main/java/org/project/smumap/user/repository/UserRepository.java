@@ -1,4 +1,4 @@
-package org.project.smumap.repository;
+package org.project.smumap.user.repository;
 
 import org.project.smumap.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;

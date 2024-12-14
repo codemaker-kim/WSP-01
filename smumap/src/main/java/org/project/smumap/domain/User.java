@@ -26,7 +26,7 @@ public class User implements UserDetails {
     private String password;
 
     @Builder
-    public User(String username, String password, String auth) {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
     }

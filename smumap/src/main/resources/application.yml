@@ -3,7 +3,7 @@ spring:
     properties:
       hibernate:
         ddl-auto: update
-        driver_class:
+        driver_class: org.mariadb.Driver-class
     show-sql: true
     defer-datasource-initialization: true
   datasource:
@@ -11,3 +11,7 @@ spring:
     driver-class-name:
     username:
     password:
+  servlet:
+    multipart:
+      max-file-size: 800MB
+      max-request-size: 800MB

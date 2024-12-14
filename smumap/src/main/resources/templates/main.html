@@ -1,10 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Main Page</title>
+    <meta charset="UTF-8" />
+    <title>SMU Map Dynamic Viewer</title>
+    <style>
+        /* Map Area Styling */
+        .map-area {
+            position: relative; /* Ensures dynamic elements are absolutely positioned inside */
+            width: 100%;
+            height: 1000px;
+            background-color: #eceff1;
+            border: 1px solid #333;
+            overflow: hidden;
+        }
+
+        /* Image Styling for Dynamic Map Area */
+        .map-area img {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+            transition: transform 0.2s ease-in-out; /* Animate smooth scaling */
+        }
+
+        /* Button General Style */
+        .btn {
+            position: absolute;
+            padding: 8px 15px;
+            cursor: pointer;
+            background: #007bff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        /* Directional Movement Button Styles */
+        .top {
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .bottom {
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .left {
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .right {
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* File Upload and Action Buttons */
+        .container {
+            text-align: center;
+            margin: 20px auto;
+        }
+    </style>
 </head>
+
 <body>
-<h1>SMU-MAP</h1>
+<div class="container">
+    <h1>SMU-MAP</h1>
+
+    <label for="uploadTile">파일 업로드하기(zip 파일)</label>
+    <input type="file" id="uploadTile" name="uploadTile" />
+    <button id="uploadButton" type="button">지도 업로드</button>
+
+    <div class="map-area" id="map-area"></div>
+
+    <form action="/logout" method="GET">
+        <input type="submit" value="로그아웃" />
+    </form>
+    <!--<button id="load">불러오기</button>-->
+</div>
+
+<script src="/js/script.js"></script>
 </body>
 </html>

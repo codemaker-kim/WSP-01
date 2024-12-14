@@ -1,4 +1,4 @@
-package org.project.smumap.controller.mvc;
+package org.project.smumap.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

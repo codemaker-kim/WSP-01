@@ -1,7 +1,7 @@
 package org.project.smumap.utils.config;
 
 import org.project.smumap.domain.User;
-import org.project.smumap.repository.UserRepository;
+import org.project.smumap.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

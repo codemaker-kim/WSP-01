@@ -1,4 +1,4 @@
-package org.project.smumap.dto;
+package org.project.smumap.user.dto;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,6 +1,6 @@
-package org.project.smumap.service;
+package org.project.smumap.user.service;
 
-import org.project.smumap.dto.UserInfoRequest;
+import org.project.smumap.user.dto.UserInfoRequest;
 
 public interface UserService {
 
